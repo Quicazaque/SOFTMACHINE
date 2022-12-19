@@ -4,6 +4,6 @@ import login from "../controllers/loginController.js"
 const loginRouter = express.Router();
 
 //  localhots:3000
-loginRouter.post("/", login);
+loginRouter.get("/", login);
 
 export default loginRouter;

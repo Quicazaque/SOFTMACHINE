@@ -13,6 +13,8 @@ app.listen(port, () => {
   console.log("El servidor se esta ejecutando");
 });
 
+mongoose.set('strictQuery', false)
+
 mongoose.connect(
   "mongodb+srv://SOFTMACHINE:SOFTMACHINE123@softmachine.noggtnk.mongodb.net/Softmachine?retryWrites=true&w=majority",
   (err) => {
