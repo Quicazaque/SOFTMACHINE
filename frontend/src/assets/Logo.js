@@ -1,14 +1,19 @@
 import React from "react";
-import Flex from "../components/utils/Flex";
 
 import "./global.css";
 import logo from "./logo.png";
-function Logo() {
+
+function Logo(props) {
+  const { size, renderText } = props;
+
+  const logoStyle = {
+    display: "flex",
+  };
   return (
-    <Flex gap="0.5rem">
+    <div className="logo" style={logoStyle}>
       <img src={logo} style={{ width: "51px", height: "51px" }}></img>
       <h1 className="logo-title">SOFTMACHINE</h1>
-    </Flex>
+    </div>
   );
 }
 

@@ -5,7 +5,7 @@ import bcrypt from "bcrypt";
 //CREATE
 export async function createUser(req, res) {
   const usuario = req.body.usuario;
-  const {password} = usuario;
+  const { password } = usuario;
 
   const encriptedPassword = await bcrypt.hash(password, 10);
   usuario.password = encriptedPassword;

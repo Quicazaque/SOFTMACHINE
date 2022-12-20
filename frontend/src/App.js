@@ -1,7 +1,7 @@
 import "./assets/global.css";
 import Login from "./views/Login";
 import Machine from "./views/Machine";
-import Nav from "./components/utils/Nav";
+import Nav from "./components/Nav";
 import Home from "./views/Home";
 import { /**Link,*/ Route, Routes } from "react-router-dom";
 import SignIn from "./views/SignIn";

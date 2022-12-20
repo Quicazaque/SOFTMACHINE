@@ -1,15 +1,13 @@
 import React from "react";
-import Container from "./Container";
-import Flex from "./Flex";
-import Logo from "../../assets/Logo";
+import Logo from "../assets/Logo";
 import { Link } from "react-router-dom";
 import "./components.css";
 
 function Nav() {
   return (
     <nav className="nav">
-      <Container>
-        <Flex className="nav">
+      
+        
           <Logo></Logo>
           <Link to="/">
             <b>Inicio</b>
@@ -23,8 +21,8 @@ function Nav() {
           <Link to="/sign in">
             <b>Registrarse</b>
           </Link>
-        </Flex>
-      </Container>
+        
+      
     </nav>
   );
 }

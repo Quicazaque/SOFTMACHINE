@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Card from "../components/utils/Card";
+
 //import Gap from "./gap";
 import Input from "../components/forms/Input";
 import Button from "../components/forms/Button";
@@ -31,9 +31,8 @@ export default function Login() {
 
   return (
     <form onSubmit={onSubmit}>
-      
       <h1>Inica secion</h1>
-      <Card>
+      
         <h1>Nombre</h1>
         <Input
           onChange={(v) => {
@@ -55,7 +54,7 @@ export default function Login() {
         <Button type="submit">
           <b>Iniciar secion</b>
         </Button>
-      </Card>
+      
     </form>
   );
 }
