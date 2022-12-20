@@ -27,12 +27,16 @@ mongoose.connect(
 );
 
 //Mydleware
-app.use(express.json())
 app.use(
   cors({
     origin: "http://localhost:3000",
   })
 );
+app.use(express.json());
+app.use((req, res, next) => {
+  console.log("Solicitud");
+  next();
+});
 app.use(alquilerRouter);
 app.use("/sign in", userRouter);
 app.use("/inventario", inventarioRouter);
