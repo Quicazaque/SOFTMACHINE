@@ -43,6 +43,7 @@ export async function readUser(req, res) {
   }
   res.status(200).json(documento);
 }
+
 //UPDATE
 export async function updateUser(req, res) {
   const correo = req.params.correo;

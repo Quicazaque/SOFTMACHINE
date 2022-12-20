@@ -42,6 +42,21 @@ export async function readMaquina(req, res){
     res.status(200).json(documento)  
 }
 
+//READ MAQUINAS
+export async function MaquinasList(req, res){
+
+    let documento
+
+    try{
+        documento = await maquinaModel.find({},{_id:0, __v:0})
+
+    } catch (error){
+        res.status(400).json(error.message)
+        return;
+
+    }
+    res.status(200).json(documento)  
+}
 
 //UPDATE
 export async function updateMaquina(req, res){

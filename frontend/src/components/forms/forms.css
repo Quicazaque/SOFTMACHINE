@@ -1,0 +1,17 @@
+.button {
+  border: none;
+  background-color: rgb(14, 87, 184);
+  border-radius: 1rem;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+}
+.button b {
+  color: white;
+}
+
+.input {
+  text-align: start;
+  padding: 0.2rem;
+  border: none;
+  background: none;
+  border-bottom: solid 1px;
+}

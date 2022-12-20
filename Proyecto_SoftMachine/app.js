@@ -13,7 +13,7 @@ app.listen(port, () => {
   console.log("El servidor se esta ejecutando");
 });
 
-mongoose.set('strictQuery', false)
+mongoose.set("strictQuery", false);
 
 mongoose.connect(
   "mongodb+srv://SOFTMACHINE:SOFTMACHINE123@softmachine.noggtnk.mongodb.net/Softmachine?retryWrites=true&w=majority",
@@ -27,11 +27,13 @@ mongoose.connect(
 );
 
 //Mydleware
-app.use(express.json());
-app.use(cors({
+app.use(express.json())
+app.use(
+  cors({
     origin: "http://localhost:3000",
-  }));
+  })
+);
 app.use(alquilerRouter);
+app.use("/sign in", userRouter);
 app.use("/inventario", inventarioRouter);
-app.use("/", userRouter);
 app.use("/login", loginRouter);

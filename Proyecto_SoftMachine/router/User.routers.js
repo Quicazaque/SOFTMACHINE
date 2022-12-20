@@ -15,10 +15,14 @@ UserRouter.post("/", (req,res) => {
     createUser(req, res)
 })
 
+
+
 //LEER: GET
 UserRouter.get("/:correo", (req,res) => {
     readUser(req, res)
 })
+
+
 
 //ACTUALIZAR
 UserRouter.patch("/:correo", (req,res) => {

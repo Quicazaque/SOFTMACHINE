@@ -1,5 +1,5 @@
 import express from "express"
-import { createMaquina, deleteMaquina, readMaquina, updateMaquina } from "../controllers/MaquinaController.js"
+import { createMaquina, deleteMaquina, readMaquina, updateMaquina, MaquinasList } from "../controllers/MaquinaController.js"
 
 const maquinaRouter = express.Router()
 
@@ -16,6 +16,10 @@ maquinaRouter.post("/", (req,res) =>{
 })
 
 //LEER: GET
+
+maquinaRouter.get("/list",MaquinasList )
+
+
 maquinaRouter.get("/:id", (req,res) => {
     readMaquina(req, res)
 })
@@ -29,15 +33,4 @@ maquinaRouter.patch("/:id", (req,res) => {
 maquinaRouter.delete("/", (req,res) => {
     deleteMaquina(req, res)
 })
-
-/** router.get("/maquinas",(req,res) => {
-    res.json(Maquinas)
-}) /** 
-
-
-router.get("/:maquinas", (req, res)=> {
-   let usuario =req.params.usuario
-   res.redirect("Alquiler")
-})
-*/
 export default maquinaRouter;
