@@ -3,32 +3,22 @@ import React, { useState } from "react";
 //import Gap from "./gap";
 import Input from "../components/forms/Input";
 import Button from "../components/forms/Button";
+import { login } from "../services/authService";
 
 export default function Login() {
-  async function onSubmit(e) {
-    e.preventDefault();
-
-    const res = await fetch("http://localhost:3000/login", {
-      method: "GET",
-      mode: "cors",
-      headers: {
-        nombre,
-        password,
-      },
-    });
-    if (res.ok) {
-      console.log("entrando");
-      const doc = await res.json();
-      console.log(doc);
-      alert(doc.message);
-    } else {
-      alert("error");
-    }
-  }
-
   const [nombre, setNombre] = useState("");
   const [password, setPassword] = useState("");
 
+  async function onSubmit(event) {
+    event.preventDefault();
+
+    //TEST LOGS
+    console.log(nombre);
+    console.log(password);
+
+    const token = await login(nombre, password);
+    console.log(token);
+  }
   return (
     <form onSubmit={onSubmit}>
       <h1>Inica secion</h1>

@@ -4,6 +4,10 @@ import UserModel from "../models/UserModel.js";
 export default async function login(req, res) {
   try {
     const { nombre, password } = req.headers;
+
+    console.log(nombre);
+    console.log(password);
+
     const document = await UserModel.findOne({ nombre: nombre });
 
     if (document != null) {
