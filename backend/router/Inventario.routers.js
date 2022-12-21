@@ -16,7 +16,7 @@ maquinaRouter.post("/", (req,res) =>{
 })
 
 //LEER: GET
-
+//LEER LISTA DE MAQUINAS /inventario/list
 maquinaRouter.get("/list",MaquinasList )
 
 

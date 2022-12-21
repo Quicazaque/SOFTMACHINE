@@ -3,8 +3,7 @@ import "./Logo.css";
 import logo from "./logo.png";
 
 function Logo(props) {
-  
-  const { size = "70px" /**renderText*/ } = props;
+  const { size = "70px" ,renderText= true } = props;
 
   const style = {
     width: size,
@@ -12,9 +11,10 @@ function Logo(props) {
   };
 
   return (
-    <div className="logo flex ">
+    <div className="logo inline-flex ">
       <img src={logo} style={style}></img>
-      <h1 className="title">SOFTMACHINE</h1>
+      {renderText ? <h1 className="title">SOFTMACHINE</h1>: null}
+      
     </div>
   );
 }

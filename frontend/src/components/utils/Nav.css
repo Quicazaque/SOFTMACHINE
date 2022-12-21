@@ -1,8 +1,11 @@
 .nav {
   box-shadow: var(--default-shadow);
+  
 }
-
 .nav .container {
   align-items: center;
   gap: 5rem;
+  
+  
 }
+
