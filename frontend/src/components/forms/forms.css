@@ -1,8 +1,10 @@
 .button {
+  font-weight: bold;
   border: none;
   background-color: rgb(14, 87, 184);
-  border-radius: 1rem;
-  padding: 0.5rem 2rem 0.5rem 2rem;
+  border-radius: var(--default-border-radius);
+  padding: 0.5rem 2rem;
+  cursor: pointer;
 }
 .button b {
   color: white;

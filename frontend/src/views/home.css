@@ -1,14 +1,4 @@
 .home {
   text-align: left;
-}
-h4 {
-  font-size: 36px;
-}
-h1 {
-  font-size: 34px;
-  max-width: 20rem;
-}
-
-p {
-  font-size: 30px;
+  background-color: darkgrey;
 }

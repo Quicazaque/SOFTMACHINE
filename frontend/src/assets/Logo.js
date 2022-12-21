@@ -1,18 +1,20 @@
 import React from "react";
-
-import "./global.css";
+import "./Logo.css";
 import logo from "./logo.png";
 
 function Logo(props) {
-  const { size, renderText } = props;
+  
+  const { size = "70px" /**renderText*/ } = props;
 
-  const logoStyle = {
-    display: "flex",
+  const style = {
+    width: size,
+    height: size,
   };
+
   return (
-    <div className="logo" style={logoStyle}>
-      <img src={logo} style={{ width: "51px", height: "51px" }}></img>
-      <h1 className="logo-title">SOFTMACHINE</h1>
+    <div className="logo flex ">
+      <img src={logo} style={style}></img>
+      <h1 className="title">SOFTMACHINE</h1>
     </div>
   );
 }

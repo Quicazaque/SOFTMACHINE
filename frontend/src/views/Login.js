@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-
-//import Gap from "./gap";
 import Input from "../components/forms/Input";
 import Button from "../components/forms/Button";
 import { login } from "../services/authService";
@@ -22,29 +20,28 @@ export default function Login() {
   return (
     <form onSubmit={onSubmit}>
       <h1>Inica secion</h1>
-      
-        <h1>Nombre</h1>
-        <Input
-          onChange={(v) => {
-            setNombre(v.target.value);
-          }}
-        >
-          Nombre
-        </Input>
 
-        <h1>password</h1>
-        <Input
-          type="password"
-          value={password}
-          onChange={(v) => setPassword(v.target.value)}
-        >
-          password
-        </Input>
+      <h1>Nombre</h1>
+      <Input
+        onChange={(v) => {
+          setNombre(v.target.value);
+        }}
+      >
+        Nombre
+      </Input>
 
-        <Button type="submit">
-          <b>Iniciar secion</b>
-        </Button>
-      
+      <h1>password</h1>
+      <Input
+        type="password"
+        value={password}
+        onChange={(v) => setPassword(v.target.value)}
+      >
+        password
+      </Input>
+
+      <Button type="submit">
+        <b>Iniciar secion</b>
+      </Button>
     </form>
   );
 }
