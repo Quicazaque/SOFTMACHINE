@@ -1,17 +1,33 @@
-import React from "react";
-import MaquinaCard from "../../components/Maquinas/MaquinaCard";
+import React, { useEffect, useState } from "react";
+import GetMachine from "./GetMachine";
+import "./Machines.css";
 
 function Machine() {
-  const userData = {
-    maquina: " Destornillador torx",
-    inventario: "disponible",
-    precio: "3500",
-  };
+
+  async function fetchPeticion(){
+    const res = await fetch("http://localhost:8080/inventario/list")
+    const documents = await res.json()
+    setDocuments(documents)
+  }
+  
+  const [documents, setDocuments] = useState([]);
+
+  useEffect(() => {
+    fetchPeticion()
+    
+  }, []);
+
   return (
-    <div>
-      <h1>Maquinas de SoftMachine</h1>
-      <MaquinaCard userData={userData}> </MaquinaCard>
-    </div>
+    <section className="panel">
+      <div className="container">
+        <h1>Inventaio De Maquinas</h1>
+        </div>
+
+        <div className="GetMaquinas card flex">
+           {documents.map((element) => <GetMachine data={element}/> )}      
+        
+      </div>
+    </section>
   );
 }
 

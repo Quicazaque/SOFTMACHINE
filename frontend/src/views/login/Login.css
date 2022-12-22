@@ -18,14 +18,14 @@
   color: var(--main-color);
   text-align: center;
   font-size: 32px;
-  margin: 2rem 0;
 }
 .login .button {
-  margin: 1rem 6rem;
+    margin: 1rem 6rem;
 }
 
-.login .textos {
+.login .textos{
   font-size: 20px;
+  
 }
 .login .form {
   max-width: 25rem;

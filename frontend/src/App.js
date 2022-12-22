@@ -1,6 +1,6 @@
 import "./assets/global.css";
 import Login from "./views/login/Login";
-import Machine from "./views/machine/Machine";
+import GetMachine from "./views/machine/GetMachine";
 import Machines from "./views/machine/Machines";
 import SignIn from "./views/Signin/SignIn";
 import Nav from "./components/utils/Nav";
@@ -17,8 +17,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<Login/>}/>
-        <Route path="/inventario" element={<Machines/>}/>
-        <Route path="/inventario/:maquina" element={<Machine/>}/>
+        <Route path="/inventario/:maquina" element={<GetMachine/>}/>
+        <Route path="/inventario/list" element={<Machines/>}/>
         <Route path="/sign in" element={<SignIn/>}/>
         <Route path="*" element={<h1>404 NOT FROND</h1>}></Route>
       </Routes>

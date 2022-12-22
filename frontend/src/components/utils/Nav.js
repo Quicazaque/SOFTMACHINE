@@ -17,10 +17,10 @@ function Nav() {
           <Link to="/" >Inicio</Link>
         </li>
         <li>
-          <Link to="/inventario">Maquinas</Link>
+          <Link to="/inventario/list">Maquinas</Link>
         </li>
         <li>
-          <Link to="/login">Inicio de sesion</Link>
+          <Link to="/login">Inicio de sesión</Link>
         </li>
         
         <li>

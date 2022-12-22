@@ -11,7 +11,7 @@ function Home() {
       <div className="container grid">
         <div className="headline">
           <p className="title">
-            <b>Alquiler Maquinas</b></p>
+            <b>Alquiler Maquinas y Herramientas</b></p>
           <p className="content">
             <b>La mejor calidad con los mejores precios</b></p>
           <p className="support">¡Reserva ya la tuya!</p>

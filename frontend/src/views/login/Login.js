@@ -22,7 +22,7 @@ export default function Login() {
   return (
     <section className="login">
       <form onSubmit={onSubmit} className="flesx card form">
-        <p className="title"><h1>Inicio de secion</h1></p>
+        <p className="title"><h1>Inicio de sesión</h1></p>
 
         <Input
           onChange={(v) => {
@@ -38,7 +38,7 @@ export default function Login() {
         </Input>
 
         <Button type="submit" className="button">
-          <b>Iniciar secion</b>
+          <b>Iniciar sesión</b>
         </Button>
       </form>
     </section>

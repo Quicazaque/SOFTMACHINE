@@ -45,7 +45,26 @@ export async function readMaquina(req, res){
 //READ MAQUINAS
 export async function MaquinasList(req, res){
 
-    let documento
+ /**   const {name} = req.params
+
+    try {
+        const documents = await maquinaModel.find({          
+            
+            $or:[
+                {maquina: name},
+                {disponible: name},
+            ]
+        })
+
+        res.status(200).json(documents)
+        
+    } catch (error) {
+        res.status(400).json(error.message)
+
+        
+    }
+*/ 
+      let documento
 
     try{
         documento = await maquinaModel.find({},{_id:0, __v:0})
@@ -55,7 +74,8 @@ export async function MaquinasList(req, res){
         return;
 
     }
-    res.status(200).json(documento)  
+    res.status(200).json(documento)
+    
 }
 
 //UPDATE
