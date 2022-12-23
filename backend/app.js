@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import alquilerRouter from "./router/Aquiler.routers.js";
 import inventarioRouter from "./router/Inventario.routers.js";
 import userRouter from "./router/User.routers.js";
-import loginRouter from "./controllers/loginController.js";
+import { login } from "./modules/authModule.js";
 
 const app = express();
 const port = process.env.PORT || 8080;
@@ -40,4 +40,4 @@ app.use((req, res, next) => {
 app.use(alquilerRouter);
 app.use("/sign in", userRouter);
 app.use("/inventario", inventarioRouter);
-app.use("/login", loginRouter);
+app.use("/login", login);

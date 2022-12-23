@@ -1,11 +1,11 @@
 import React from "react";
 import "./forms.css";
 
-export default function Input(props) {
+function Input(props) {
   const { children, type, onChange,placeholder } = props;
   return (
     <label className="input">
-      {children}
+      <b>{children}</b>
       <input
       type={type}
       onChange={onChange}
@@ -14,3 +14,5 @@ export default function Input(props) {
     </label>
   );
 }
+
+export default Input;

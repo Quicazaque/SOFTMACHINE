@@ -1,9 +1,9 @@
-import express from "express";
-import login from "../controllers/loginController.js"
+/**import express from "express";
+import {login} from "../modules/authModule.js"
 
 const loginRouter = express.Router();
 
 //  localhots:3000
-loginRouter.get("/", login);
+loginRouter.get("/login", login);
 
-export default loginRouter;
+export default loginRouter;*/

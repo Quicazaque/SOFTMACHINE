@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt";
+/**import bcrypt from "bcrypt";
 import UserModel from "../models/UserModel.js";
 
 export default async function login(req, res) {
@@ -25,3 +25,4 @@ export default async function login(req, res) {
     res.status(401).json(error.message);
   }
 }
+*/

@@ -1,43 +1,60 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Input from "../../components/forms/Input";
 import Button from "../../components/forms/Button";
 import { login } from "../../services/authService";
-
 import "./Login.css";
+import UserContext from "../../contexts/UserContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const { setUser } = useContext(UserContext);
   const [nombre, setNombre] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   async function onSubmit(event) {
     event.preventDefault();
 
-    //TEST LOGS
-    console.log(nombre);
-    console.log(password);
-
     const token = await login(nombre, password);
-    console.log(token);
+
+    if (token) {
+      setUser(nombre);
+      navigate("/inventario/list");
+      
+    }
+
+    //TEST LOGS
+  }
+
+  function onButtonClick(evenet) {
+    evenet.preventDefault();
   }
   return (
     <section className="login">
       <form onSubmit={onSubmit} className="flesx card form">
-        <p className="title"><h1>Inicio de sesión</h1></p>
+        <h1 className="title">Inicio de sesión</h1>
 
         <Input
           onChange={(v) => {
-            setNombre(v.target.value)}}><p className="textos"><b>Nombre:</b></p>
+            setNombre(v.target.value);
+          }}
+        >
+          <p className="textos">
+            <b>Nombre:</b>
+          </p>
         </Input>
 
         <Input
           type="password"
           value={password}
           onChange={(v) => setPassword(v.target.value)}
-        ><p className="textos">
-          <b>Contraseña:</b></p>
+        >
+          <p className="textos">
+            <b>Contraseña:</b>
+          </p>
         </Input>
 
-        <Button type="submit" className="button">
+        <Button onButtonClick={onButtonClick} type="submit" className="button">
           <b>Iniciar sesión</b>
         </Button>
       </form>

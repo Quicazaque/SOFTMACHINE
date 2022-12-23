@@ -11,12 +11,12 @@ function Home() {
       <div className="container grid">
         <div className="headline">
           <p className="title">
-            <b>Alquiler Maquinas y Herramientas</b></p>
+            <b>Alquiler De Maquinas Y Herramientas</b></p>
           <p className="content">
             <b>La mejor calidad con los mejores precios</b></p>
           <p className="support">¡Reserva ya la tuya!</p>
 
-          <NavLink to= "/inventario" className="BotonReservar">
+          <NavLink to= "/inventario/list" className="BotonReservar">
             <Button><b>Reservar</b></Button></NavLink>
         </div>
         <div className="herramientas">

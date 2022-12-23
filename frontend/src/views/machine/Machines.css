@@ -1,0 +1,41 @@
+.panel .balance {
+  align-items: center;
+}
+
+.panel .balance .value {
+  font-size: 20px;
+  margin-left: auto;
+}
+
+.GetMaquinas {
+  flex-direction: column;
+  gap: 1rem;
+  background-color: rgb(255, 255, 255);
+  margin-top: 0;
+  margin: auto;
+  box-shadow: none;
+  max-width: 90%;
+}
+
+.GetMaquina .maquina {
+  font-size: 25px;
+  color: black;
+}
+
+.GetMaquina .positive-inventario {
+  margin: 1rem 0;
+  font-size: 20px;
+  color: rgb(0, 172, 29);
+}
+
+.GetMaquina .negative-inventario {
+  margin: 1rem 0;
+  font-size: 20px;
+  color: rgb(168, 0, 0);
+}
+.GetMaquina .precio {
+  font-size: 20px;
+  color: rgb(39, 107, 10);
+  font-weight: 600;
+  text-align: right;
+}
