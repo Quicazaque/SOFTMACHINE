@@ -35,8 +35,10 @@ h1 {
 }
 
 h2 {
-  font-size: 28px;
-  color: var(--main-color);
+  font-size: 19px;
+  color: rgb(73, 73, 73);
+  text-align: center;
+  margin: 1rem 0;
 }
 
 ul {

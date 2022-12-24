@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import Input from "../../components/forms/Input";
 import Button from "../../components/forms/Button";
+import Wirebutton from "../../components/forms/WireButton";
 import { login } from "../../services/authService";
 import "./Login.css";
 import UserContext from "../../contexts/UserContext";
@@ -24,6 +25,10 @@ export default function Login() {
     }
 
     //TEST LOGS
+  }
+  async function onSubmit2(event) {
+    event.preventDefault();
+    navigate("/signin");
   }
 
   function onButtonClick(evenet) {
@@ -57,6 +62,11 @@ export default function Login() {
         <Button onButtonClick={onButtonClick} type="submit" className="button">
           <b>Iniciar sesión</b>
         </Button>
+      </form>
+      <form onSubmit={onSubmit2}>      
+      <h2>¿No tienes una cuenta? <Wirebutton onButtonClick={onButtonClick}  className="Wirebutton">
+        Registrate
+      </Wirebutton></h2>
       </form>
     </section>
   );

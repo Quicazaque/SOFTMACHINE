@@ -42,7 +42,7 @@ export default function App() {
           }
         />
         <Route
-          path="/sign in"
+          path="/signin"
           element={
             <UserProvider>
               <SignIn />

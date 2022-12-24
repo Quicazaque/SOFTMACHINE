@@ -1,11 +1,11 @@
 import React from "react";
 import "./forms.css";
 
-export default function Button(props) {
+export default function Wirebutton(props) {
   const { children, onClick, type } = props;
   return (
-    <button className="wire-butto" type={type} onClick={onClick}>
-      <b>{children}</b>
+    <button className="Wirebutton" type={type} onClick={onClick}>
+      {children}
     </button>
   );
 }

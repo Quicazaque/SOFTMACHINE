@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import alquilerRouter from "./router/Aquiler.routers.js";
 import inventarioRouter from "./router/Inventario.routers.js";
 import userRouter from "./router/User.routers.js";
-import { login } from "./modules/authModule.js";
+import loginRouter from "./controllers/loginController.js";
 
 const app = express();
 const port = process.env.PORT || 8080;
@@ -27,17 +27,13 @@ mongoose.connect(
 );
 
 //Mydleware
+app.use(express.json())
 app.use(
   cors({
     origin: "http://localhost:3000",
   })
 );
-app.use(express.json());
-app.use((req, res, next) => {
-  console.log("Solicitud");
-  next();
-});
 app.use(alquilerRouter);
-app.use("/signin", userRouter);
+app.use("/sign in", userRouter);
 app.use("/inventario", inventarioRouter);
-app.use("/login", login);
+app.use("/login", loginRouter);
