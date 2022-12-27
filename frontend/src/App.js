@@ -5,9 +5,10 @@ import Machines from "./views/machine/Machines";
 import SignIn from "./views/Signin/SignIn";
 import Nav from "./components/utils/Nav";
 import Home from "./views/home/Home";
-
+import { CookiesProvider } from "react-cookie";
 import { /**Link,*/ Route, Routes } from "react-router-dom";
 import UserContext, { UserProvider } from "./contexts/UserContext";
+import { TokenProvider } from "./contexts/TokenContext";
 
 export default function App() {
   return (
@@ -15,38 +16,54 @@ export default function App() {
       <Nav></Nav>
 
       <Routes>
-        <Route path="/" element={<Home />} /> 
-        
+        <Route path="/" element={<Home />} />
+
         <Route
           path="/login"
           element={
-            <UserProvider>
-              <Login />
-            </UserProvider>
+            <CookiesProvider>
+              <TokenProvider>
+                <UserProvider>
+                  <Login />
+                </UserProvider>
+              </TokenProvider>
+            </CookiesProvider>
           }
         />
         <Route
           path="/inventario/:maquina"
           element={
-            <UserProvider>
-              <GetMachine />
-            </UserProvider>
+            <CookiesProvider>
+              <TokenProvider>
+                <UserProvider>
+                  <GetMachine />
+                </UserProvider>
+              </TokenProvider>
+            </CookiesProvider>
           }
         />
         <Route
           path="/inventario/list"
           element={
-            <UserProvider>
-              <Machines />
-            </UserProvider>
+            <CookiesProvider>
+              <TokenProvider>
+                <UserProvider>
+                  <Machines />
+                </UserProvider>
+              </TokenProvider>
+            </CookiesProvider>
           }
         />
         <Route
           path="/signin"
           element={
-            <UserProvider>
-              <SignIn />
-            </UserProvider>
+            <CookiesProvider>
+              <TokenProvider>
+                <UserProvider>
+                  <SignIn />
+                </UserProvider>
+              </TokenProvider>
+            </CookiesProvider>
           }
         />
         <Route path="*" element={<h1>404 NOT FROND</h1>}></Route>

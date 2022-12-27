@@ -6,11 +6,15 @@ import { login } from "../../services/authService";
 import "./Login.css";
 import UserContext from "../../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
+import TokenContext from "../../contexts/TokenContext";
+import { useCookies } from "react-cookie";
 
 export default function Login() {
   const { setUser } = useContext(UserContext);
+  const { setToken } = useContext(TokenContext);
   const [nombre, setNombre] = useState("");
   const [password, setPassword] = useState("");
+  const [cookies, setCookies] = useCookies(["token, user"]);
   const navigate = useNavigate();
 
   async function onSubmit(event) {
@@ -20,8 +24,10 @@ export default function Login() {
 
     if (token) {
       setUser(nombre);
+      setToken(token);
+      setCookies("token", token, { path: "/" });
+      setCookies("user", nombre, { path: "/" });
       navigate("/inventario/list");
-      
     }
 
     //TEST LOGS
@@ -63,10 +69,13 @@ export default function Login() {
           <b>Iniciar sesión</b>
         </Button>
       </form>
-      <form onSubmit={onSubmit2}>      
-      <h2>¿No tienes una cuenta? <Wirebutton onButtonClick={onButtonClick}  className="Wirebutton">
-        Registrate
-      </Wirebutton></h2>
+      <form onSubmit={onSubmit2}>
+        <h2>
+          ¿No tienes una cuenta?{" "}
+          <Wirebutton onButtonClick={onButtonClick} className="Wirebutton">
+            Registrate
+          </Wirebutton>
+        </h2>
       </form>
     </section>
   );

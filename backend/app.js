@@ -5,6 +5,9 @@ import alquilerRouter from "./router/Aquiler.routers.js";
 import inventarioRouter from "./router/Inventario.routers.js";
 import userRouter from "./router/User.routers.js";
 import { login } from "./modules/authModule.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 8080;

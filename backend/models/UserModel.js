@@ -18,10 +18,11 @@ const UserModelRegistro = new mongoose.Schema({
     validate: {
       validator: validatorEdad,
       message: "Tiene que ser mayor de edad",
-    }},
+    },
+  },
   numeroTelefonico: { type: Number, required: true },
   ubicacion: { type: String, required: true },
-  correo: { type: String, unique: true },
+  correo: { type: String, required: true },
   password: { type: String, required: true },
 });
 export default mongoose.model("users", UserModelRegistro);
