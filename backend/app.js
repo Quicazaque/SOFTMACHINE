@@ -32,7 +32,7 @@ mongoose.connect(
 //Mydleware
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: process.env.APP_URL
   })
 );
 app.use(express.json());
