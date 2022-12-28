@@ -1,6 +1,6 @@
 import express from "express"
 //import UserModel from "../models/UserModel";
-import { createUser,deleteUser, readUser, updateUser } from "../controllers/userController.js"
+import { createUser,deleteUser, readUser, updateUser } from "../controllers/UserController.js"
 
 const UserRouter= express.Router()
 

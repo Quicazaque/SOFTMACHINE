@@ -26,7 +26,8 @@ function Machine() {
 
   async function fetchPeticion() {
     const res = await fetch("http://localhost:8080/inventario/list");
-    const documents = await GetMachine(currentToken);
+    const documents = await res.json();
+    //const documents = await GetMachine(currentToken);
     setDocuments(documents);
   }
 
