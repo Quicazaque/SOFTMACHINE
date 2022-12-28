@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import "./Machines.css";
 import TokenContext from "../../contexts/TokenContext";
 import { useCookies } from "react-cookie";
+import { API_URL } from "../../services/api";
+
 
 function Machine() {
   const { user } = useContext(UserContext);
@@ -25,7 +27,7 @@ function Machine() {
   }, []);
 
   async function fetchPeticion() {
-    const res = await fetch(API_URL+ "/inventario/list");
+    const res = await fetch(API_URL + "/inventario/list");
     const documents = await res.json();
     //const documents = await GetMachine(currentToken);
     setDocuments(documents);
