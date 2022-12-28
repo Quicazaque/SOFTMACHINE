@@ -25,8 +25,8 @@ export default function Login() {
     if (token) {
       setUser(nombre);
       setToken(token);
-      setCookies("token", token, { path: "/" });
-      setCookies("user", nombre, { path: "/" });
+      setCookies("token", token, { path: "/", maxAge: 7 * 24 * 60 * 60});
+      setCookies("user", nombre, { path: "/", maxAge: 7 * 24 * 60 * 60});
       navigate("/inventario/list");
     }
 
